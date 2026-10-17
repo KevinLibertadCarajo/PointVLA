@@ -10,7 +10,12 @@ Hardware: desk-corner-mounted Piper H, no gripper; Quest 3. Ubuntu 24.04, ROS 2 
 - [ ] Follow [WORKING_SETUP.md](WORKING_SETUP.md) to capture the actual PC configuration.
 - [ ] Record firmware, exact successful launch command and any fixes made during troubleshooting.
 - [ ] Preserve source revisions, submodule revisions and local modifications.
-- [ ] Record desk geometry, mounting transform, robot limits and reachable downward-facing workspace.
+- [x] Document user-reported mounting transform and proposed 0.75 × 0.75 m target square.
+- [x] Record installed URDF angle limits and preserve supplied MoveIt joint_limits.yaml.
+- [ ] Verify base_link origin measurements and loaded runtime limits.
+- [ ] Record full desk/platform geometry, vertical bounds and exclusion regions.
+- [ ] Validate reachable downward-facing targets and collision-free paths.
+- Baseline: [2026-10-17 notes](docs/baselines/2026-10-17.md); configuration records: [config/baseline](config/baseline).
 - [ ] Keep ML dependencies separate from the working ROS environment.
 Acceptance: a fresh terminal can reproduce feedback and a small planned movement.
 

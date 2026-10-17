@@ -1,0 +1,15 @@
+# Proposed target region, NOT a validated reachable/safe workspace.
+# Documentation only; no runtime enforcement is provided by this file.
+workspace_frame: desk
+x_range_m: [0.0, 0.75]
+y_range_m: [0.0, 0.75]
+z_range_m: null
+object_top_clearance_m: 0.15
+target_reference: flange_center
+target_orientation: flange_outward_axis_downward
+reachability_validated: false
+collision_scene_validated: false
+exclusion_regions: null  # Must define base/platform footprint and obstacle clearances.
+full_desk_dimensions_m: null  # Working square is not the full physical desk.
+# Opposite corner lies ~0.919 m horizontally from the reported base position.
+# Validate IK, entire paths, all-link collisions and downward orientation.

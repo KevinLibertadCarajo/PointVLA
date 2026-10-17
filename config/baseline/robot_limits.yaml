@@ -1,0 +1,29 @@
+# Documentation summary, not a ROS parameter file.
+# Position values are user-reported installed URDF output rounded to 6 decimals.
+robot: piper_h
+effector_type: none
+joint_order: [joint1, joint2, joint3, joint4, joint5, joint6]
+position_limits_rad:
+  joint1: [-2.617994, 2.617994]
+  joint2: [0.0, 3.141593]
+  joint3: [-2.967060, 0.0]
+  joint4: [-2.356194, 2.356194]
+  joint5: [-1.562070, 1.562070]
+  joint6: [-2.967060, 2.967060]
+urdf_max_velocity_rad_s: 5.0
+moveit_file:
+  source: joint_limits.yaml
+  max_velocity_rad_s: 5.0
+  max_acceleration_rad_s2: 5.0
+  default_velocity_scaling: 0.1
+  default_acceleration_scaling: 0.1
+  confirmed_loaded_at_runtime: false
+proposed_operating_settings:
+  rviz_velocity_scaling: 0.1
+  rviz_acceleration_scaling: 0.1
+  driver_speed_percent: 10
+  confirmed_current: false
+# At request scaling 0.1, corresponding planning ceilings are 0.5 rad/s
+# and 0.5 rad/s^2. Driver percentage is a separate control.
+# Original joint_limits.yaml includes joint7/gripper; preserve as supplied,
+# but these are not joints in this six-joint/no-gripper arm configuration.

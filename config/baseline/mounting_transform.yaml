@@ -1,0 +1,11 @@
+# Documentation only; not automatically loaded into ROS/TF.
+# Pose of base_link expressed in desk coordinates.
+# User measurements; confirm they refer to the URDF base_link origin.
+parent_frame: desk
+child_frame: base_link
+translation_m: [0.10, 0.10, 0.022]
+rotation_rpy_rad: [0.0, 0.0, -1.5707963267948966]
+status: user_measured_not_independently_validated
+# Desk origin: chosen tabletop corner. +X short edge, +Y long edge, +Z up.
+# Right-handed frame. Robot +X = desk -Y; robot +Y = desk +X.
+# Assumes upright base, and platform elevation equals base_link elevation.

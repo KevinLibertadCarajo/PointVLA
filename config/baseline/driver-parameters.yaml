@@ -1,0 +1,71 @@
+# Driver configuration from snapshot 20261017T131826Z.
+# Sources: STARTUP_LOG.txt, parameters/_agx_arm_ctrl_single_node.yaml,
+# parameters/_control_gate.yaml, can0.txt.
+# fw_version is empty, so the node was left on firmware auto-detect.
+# The snapshot does not record a detected firmware version.
+
+launch:
+  command: >-
+    ros2 launch agx_arm_ctrl start_single_agx_arm_moveit.launch.py
+    can_port:=can0 arm_type:=piper_h effector_type:=none follow:=true
+    auto_enable:=false auto_control_gate:=true speed_percent:=10
+  arguments:
+    can_port: can0
+    arm_type: piper_h
+    effector_type: none
+    follow: true
+    auto_enable: false
+    auto_control_gate: true
+    speed_percent: 10
+    fast_mode: false
+    fw_version: ""
+    pub_rate: 200
+    enable_timeout: 5.0
+    revo2_type: left
+    tcp_offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    gripper_default_effort: 1.0
+    feedback_topic: feedback/joint_states
+    control_topic: control/joint_states
+    control_gate_service: control_enable
+
+agx_arm_ctrl_single_node:
+  ros__parameters:
+    arm_type: piper_h
+    auto_enable: false
+    can_port: can0
+    control_enabled: false
+    effector_type: none
+    enable_timeout: 5.0
+    fast_mode: false
+    fw_version: ""
+    gripper_default_effort: 1.0
+    pub_rate: 200
+    revo2_type: left
+    speed_percent: 10
+    tcp_offset: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    use_sim_time: false
+
+control_gate:
+  ros__parameters:
+    gate_service_name: control_enable
+    status_topics:
+      - arm_controller/follow_joint_trajectory/_action/status
+    use_sim_time: false
+
+can:
+  interface: can0
+  flags: [NOARP, UP, LOWER_UP, ECHO]
+  state: ERROR-ACTIVE
+  bitrate: 1000000
+  sample_point: 0.750
+  restart_ms: 0
+  tq: 62
+  prop_seg: 5
+  phase_seg1: 6
+  phase_seg2: 4
+  sjw: 2
+  brp: 3
+  clock: 48000000
+  driver: gs_usb
+  parentbus: usb
+  parentdev: 7-1.4.2:1.0
